@@ -46,4 +46,4 @@ solution obtenue par l’approche métaheuristique. Enfin, les tableaux doivent 
 CPU en secondes nécessaires pour atteindre chaque valeur de solution.
 
 # Notre équipe : 
-__Galfano Nathan__ et __Crinchon Mathis__
+__Bouagila Ghazi__, __Galfano Nathan__ et __Crinchon Mathis__
