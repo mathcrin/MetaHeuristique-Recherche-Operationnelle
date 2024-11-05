@@ -44,3 +44,6 @@ résultats. Ces tableaux doivent permettre de comparer la valeur de la solution 
 des solutions obtenues après les procédures de recherche locale (LS) et la valeur de la
 solution obtenue par l’approche métaheuristique. Enfin, les tableaux doivent contenir les temps
 CPU en secondes nécessaires pour atteindre chaque valeur de solution.
+
+# Notre équipe : 
+__Galfano Nathan__ et __Crinchon Mathis__
