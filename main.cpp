@@ -109,7 +109,7 @@ vector<int> rechercheTabou(const vector<vector<int>>& matrix, const vector<int>&
     uniform_int_distribution<> dis(0, m - 1);
 
     for (int iter = 0; iter < maxIter; ++iter) {
-        printf("1");
+
         vector<int> currentSolution = bestSolution;
         string move = "";
 
@@ -121,13 +121,13 @@ vector<int> rechercheTabou(const vector<vector<int>>& matrix, const vector<int>&
         if (echangerSousEnsemble(currentSolution, m, ensembleARemplacer, ensembleQuiRemplace)) {
             // Générer un identifiant pour le mouvement
             move = to_string(ensembleARemplacer) + "-" + to_string(ensembleQuiRemplace);
-            printf("2");
+
             // Calculer le coût de la solution courante
             int currentCost = calculerCout(currentSolution, costs);
 
             // Vérifier si le mouvement est tabou
             if (tabouList.find(move) == tabouList.end() || currentCost < bestCost) {
-                printf("3");
+
                 solution = currentSolution;
                 if (currentCost < bestCost) {
                     bestCost = currentCost;
@@ -140,7 +140,7 @@ vector<int> rechercheTabou(const vector<vector<int>>& matrix, const vector<int>&
                 }
                 tabouList.insert(move);
             }
-            printf("4");
+
             // Afficher l'état à chaque itération (facultatif)
             cout << "Iteration " << iter + 1 << " : Cout actuel = " << currentCost
                  << ", Meilleur cout = " << bestCost << endl;
@@ -224,7 +224,7 @@ int main() {
     loadMatrices(filename, matrix, costs, n, m);
 
     // Exemple : utiliser les matrices pour résoudre le problème
-    int maxIter = 100;   // Nombre maximal d'itérations
+    int maxIter = 1000;   // Nombre maximal d'itérations
     int tabouSize = 10;  // Taille de la liste tabou
 
     std::clock_t start = std::clock();
