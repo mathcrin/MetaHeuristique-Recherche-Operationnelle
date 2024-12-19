@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <unordered_set>
+#include <ctime>
 using namespace std;
 
 bool ajouterSousEnsemble(std::vector<int>& tableau, int taille , int numeroSousEnsemble) {
@@ -41,7 +42,7 @@ bool echangerSousEnsemble(std::vector<int>& tableau, int taille , int numeroSous
 }
 
 vector<int> constructSolution(const vector<vector<int>>& matrix, int n, int m) {
-    vector<int> solution(m, -1); // Initialiser la solution avec -1
+    vector<int> solution(m, 0); // Initialiser la solution avec 0
     vector<int> covered(n, 0); // Tableau qui sert à stocker les éléments déjà couverts
 
     // Parcourir les colonnes de la matrice
@@ -226,12 +227,18 @@ int main() {
     int maxIter = 100;   // Nombre maximal d'itérations
     int tabouSize = 10;  // Taille de la liste tabou
 
+    std::clock_t start = std::clock();
     vector<int> bestSolution = rechercheTabou(matrix, costs, maxIter, tabouSize);
+    std::clock_t end = std::clock();
+    double cpu_time = double(end - start) / CLOCKS_PER_SEC;
+    std::cout << "Temps CPU utilise : " << cpu_time << " secondes" << std::endl;
 
-    cout << "\nMeilleure solution trouvee :\n";
+    cout << "\nMeilleure solution trouvee :\n (1 = inclus, 0 = exclus)\n";
     for (size_t i = 0; i < bestSolution.size(); ++i) {
         cout << "Sous-ensemble " << i + 1 << " : " << bestSolution[i] << endl;
     }
+
+    std::cout << "Temps CPU utilise : " << cpu_time << " secondes" << std::endl;
 
     return 0;
 }
